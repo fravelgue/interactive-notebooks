@@ -1,0 +1,38 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# HTTP examples
+
+#!markdown
+
+## HTTP GET with Basic authentication
+
+Doing a HTTP GET request with Basic authentication, it uses Javascript kernel to encode `userName` and `password` and it shares vale to HTTP kernel.
+
+#!javascript
+
+let userName = "changeit";
+let password = "changeit";
+
+let auth = 'Basic ' + btoa(unescape(encodeURIComponent(userName + ':' + password)));
+
+console.log(auth);
+
+#!http
+
+#!set --name token --value @javascript:auth
+
+GET https://fravelgue.com/testing/ok.json
+Accept: application/json
+Authorization: {{token}}
+
+#!markdown
+
+## Appendix
+
+- [Variable sharing](https://github.com/dotnet/interactive/blob/main/docs/variable-sharing.md).
+- [HTTP example](https://github.com/rajyraman/polyglot-notebook-ideas/tree/main).
+- 
