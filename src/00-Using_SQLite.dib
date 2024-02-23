@@ -1,13 +1,18 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
 #!markdown
 
 # Using SQLite in Notebook
 
-Install ExtensionLab NuGet package
+Now install `Microsoft.DotNet.Interactive.SQLite` NuGet package, before you use `Microsoft.DotNet.Interactive.ExtensionLab`
 
 #!csharp
 
 #r "nuget: System.Data.SQLite, *-*"
-#r "nuget: Microsoft.DotNet.Interactive.ExtensionLab, *-*"
+//#r "nuget: Microsoft.DotNet.Interactive.ExtensionLab, *-*"
+#r "nuget: Microsoft.DotNet.Interactive.SQLite, *-*"
 #r "nuget: Dapper, *-*"
 
 #!csharp
@@ -16,7 +21,7 @@ Install ExtensionLab NuGet package
 
 #!markdown
 
-Installing the `ExtensionLab` brings in some new magic commands including two additional verbs for the `#!connect` command, which you can see by running help for it.
+Installing the `Microsoft.DotNet.Interactive.SQLite` brings in some new magic commands including two additional verbs for the `#!connect` command, which you can see by running help for it.
 
 #!csharp
 
